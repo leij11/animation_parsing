@@ -1,0 +1,15 @@
+COMPSCI 4TB3 Group 02 Project Proposal
+Mingnam Su(sum1), Jessica Lei(leij11), and Suri Jia(jias5)
+
+Description
+Our task for this project is to take a step further with Jupyter Notebook’s given functionalities by providing users with the ability to animate any given algorithm. We will be implementing animations using the features of svg or by some other means.
+
+The implementation can be tested successfully by achieving step-by-step animation while running the following program:
+- derivation of sentence
+- execution of FSM
+- algorithms for making FSM deterministic and minimal
+- algorithm of checking FSM equivalence
+- execution of pushdown automata
+- generalized parsing
+
+This project will be documented and demonstrated by Jupyter notebooks throughout the development period. We hope to learn more about code generation after finishing this project, by generating SVG code based on the execution of given program. Furthermore, it also helps us to reinforce our knowledge on the topics and materials learned throughout the course.
