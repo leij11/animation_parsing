@@ -45,3 +45,12 @@ Suri:
 	execution of FSM
 	algorithm of checking FSM equivalence
 - poster design
+Weekly Schedule
+
+Feb 26th 		Completion of project proposal
+March 4th		Beginning of algorithm implementation
+March 11th		Completion of algorithm implementation
+March 18th		Completion of animation implementation
+March 25th		Completion of testing and experiments
+April 1st		Bug fixes and finalizing the project
+April 6th		Completion of project poster
