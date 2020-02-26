@@ -1,4 +1,4 @@
-COMPSCI 4TB3 Group 02 Project Proposal
+﻿COMPSCI 4TB3 Group 02 Project Proposal
 Mingnam Su(sum1), Jessica Lei(leij11), and Suri Jia(jias5)
 
 Description
@@ -12,4 +12,36 @@ The implementation can be tested successfully by achieving step-by-step animatio
 - execution of pushdown automata
 - generalized parsing
 
-This project will be documented and demonstrated by Jupyter notebooks throughout the development period. We hope to learn more about code generation after finishing this project, by generating SVG code based on the execution of given program. Furthermore, it also helps us to reinforce our knowledge on the topics and materials learned throughout the course.
+This project will be documented and demonstrated by Jupyter notebooks throughout the development period. We hope to learn more about code generation after finishing this project, by generating SVG code based on the execution of given program. Furthermore, it also helps us to consolidate our knowledge on the topics and materials learned throughout the course.
+
+Resources Used
+COMPSCI 4TB3 Course Notes on jhub4 by Dr. Emil Sekerinski, McMaster University, January 2020
+
+Development Tool (IDE): 
+http://lighttable.com/
+CSS manual and guides:
+https://css-tricks.com/animating-svg-css/
+SVG animation guides:
+https://www.w3schools.com/graphics/svg_intro.asp
+
+
+Division of Work
+
+Generalized task:
+- testing / experiment / documentation as implementation progresses
+
+Mingnan:
+- svg animation and algorithm implementation of
+	algorithms for making FSM deterministic and minimal 
+	generalized parsing
+
+Jessica:
+- svg animation and algorithm implementation of
+	derivation of sentence 
+	execution of pushdown automata 
+
+Suri:
+- svg animation and algorithm implementation of
+	execution of FSM
+	algorithm of checking FSM equivalence
+- poster design
