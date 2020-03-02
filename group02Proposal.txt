@@ -2,7 +2,12 @@
 Mingnam Su(sum1), Jessica Lei(leij11), and Suri Jia(jias5)
 
 Description
-Our task for this project is to take a step further with Jupyter Notebook’s given functionalities by providing users with the ability to animate any given algorithm. We will be implementing animations using the features of svg or by some other means.
+Our task for this project is to take a step further with Jupyter Notebook’s given functionalities by providing users with the ability to animate the execution of FSM. We will be implementing animations using the python library of turtle.
+First let the user provides FSM as input, import the Turtle package and draw the FSM diagram using Turtle. Next, ask the user to give input in the format of string, e.g."abc". Put the given input into FSM and decide whether it fits FSM, execute the input and color it if it is a good fit.
+
+Next Step:
+Algorithm for FSM deterministic
+Algorithm for FSM equivalence
 
 The implementation can be tested successfully by achieving step-by-step animation while running the following program:
 - derivation of sentence
@@ -16,6 +21,7 @@ This project will be documented and demonstrated by Jupyter notebooks throughout
 
 Resources Used
 COMPSCI 4TB3 Course Notes on jhub4 by Dr. Emil Sekerinski, McMaster University, January 2020
+Jupter Notebook
 
 Development Tool (IDE): 
 http://lighttable.com/
