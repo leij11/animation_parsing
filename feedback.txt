@@ -1,4 +1,4 @@
-Project Proposal: 2/3
+Project Proposal: 1/3
 
 A project proposal does not need to contain implementations, but needs to
 discuss what is being animated in order to show what. The project proposal
