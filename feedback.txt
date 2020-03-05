@@ -1,0 +1,9 @@
+Project Proposal: 2/3
+
+A project proposal does not need to contain implementations, but needs to
+discuss what is being animated in order to show what. The project proposal
+should contain some illustrations instead. It should also discuss different
+ways of implementations. It is unlikely that turtles are the best way. Overall
+this is by far not ambitious enough to receive a passing grade. This topic
+has already been taken by two other groups, so you need to modify it to give
+it some distinction.
