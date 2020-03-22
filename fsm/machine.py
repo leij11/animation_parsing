@@ -305,22 +305,22 @@ class Fsm(object):
         if not loop:
             len_transitions -= 1
         # ensure all args are the proper length
-        conditions = _prep_ordered_arg(len_transitions, conditions)
-        unless = _prep_ordered_arg(len_transitions, unless)
-        before = _prep_ordered_arg(len_transitions, before)
-        after = _prep_ordered_arg(len_transitions, after)
-        prepare = _prep_ordered_arg(len_transitions, prepare)
+      #  conditions = _prep_ordered_arg(len_transitions, conditions)
+       # unless = _prep_ordered_arg(len_transitions, unless)
+       # before = _prep_ordered_arg(len_transitions, before)
+       # after = _prep_ordered_arg(len_transitions, after)
+       # prepare = _prep_ordered_arg(len_transitions, prepare)
         # reorder list so that the initial state is actually the first one
         idx = states.index(self._initial)
         states = states[idx:] + states[:idx]
 
         for i in range(0, len(states) - 1):
             self.add_transition(trigger, states[i], states[i + 1],
-                                conditions=conditions[i],
-                                unless=unless[i],
-                                before=before[i],
-                                after=after[i],
-                                prepare=prepare[i],
+                             #   conditions=conditions[i],
+                              #  unless=unless[i],
+                               # before=before[i],
+                                #after=after[i],
+                                #prepare=prepare[i],
                                 **kwargs)
         if loop:
             self.add_transition(trigger, states[-1],
@@ -372,5 +372,6 @@ class Fsm(object):
                 self._transition_queue.clear()
                 raise
         return True
+
 
  
