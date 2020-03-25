@@ -14,6 +14,7 @@ from functools import partial
 from six import string_types
 from builtins import object
 from enum import Enum, EnumMeta
+import itertools
 
 
 def to_list(obj):

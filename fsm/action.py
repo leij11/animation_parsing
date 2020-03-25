@@ -32,7 +32,7 @@ class Action(object):
             if ignore:
                 return False
             else:
-                raise MachineError(msg)
+                raise Exception('Machine Error: '+msg)
         event_data = Helper(state, self, self.fsm, model, args=args, kwargs=kwargs)
         return self._process(event_data)
 

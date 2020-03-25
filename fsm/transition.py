@@ -17,11 +17,8 @@ class Transition(object):
 
     def execute(self, event_data):
         fsm = event_data.fsm
-
-
         if self.dest:  
             self._change_state(event_data)
-
 
     def _change_state(self, event_data):
         event_data.fsm.get_state(self.source).exit(event_data)

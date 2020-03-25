@@ -1,19 +1,21 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Mar 21 02:54:56 2020
-
-@author: leij
-"""
-
 import random
 from machine import Fsm
 
+states = ['A', 'C', 'B']
+ # test ordered transitions
+machine = Fsm(states=states, initial='A')
+machine.add_ordered_transitions()
+machine.next_state()
+print(machine.state)
+machine.next_state()
+print(machine.state)
+
+# test custome transitions
 class Matter(object):
     pass
 
-letter= Matter()
-states=['A', 'B', 'C']
+letter = Matter()
+states = ['A', 'B', 'C']
 
 transitions = [
     { 'trigger': 'first', 'source': 'A', 'dest': 'B' },
@@ -26,3 +28,4 @@ machine = Fsm(letter, states=states, transitions=transitions, initial='A')
 print(letter.state)
 letter.second()
 print(letter.state)
+print(machine.get_transitions())
