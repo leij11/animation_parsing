@@ -6,27 +6,6 @@ This project aims to animate different parser algorithms with interactive method
 2. Jupyter Notebook
 3. Python packages listed in requirements.txt. Run pip install -r requirements.txt from this directory to install them.
 
-
-## Prerequisites
-Graphiviz
-
-Please download it here `https://graphviz.gitlab.io/download/` and add the binary file into system envrionmental variable.
-
-Graphiviz Python
-```
-pip install graphviz
-```
-
-Jupyter notebook
-```
-pip install jupyter
-```
-
-nltk
-```
-pip install nltk
-```
-
 ## Usage and Testing
 Navigate to `./animation/`
 
