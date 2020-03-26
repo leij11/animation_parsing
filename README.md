@@ -1,6 +1,12 @@
 # Group 02
 This project aims to animate different parser algorithms with interactive method inside Jupyter Notebook.
 
+## Dependencies:
+1. Python 3
+2. Jupyter Notebook
+3. Python packages listed in requirements.txt. Run pip install -r requirements.txt from this directory to install them.
+
+
 ## Prerequisites
 Graphiviz
 
