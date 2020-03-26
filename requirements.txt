@@ -1,0 +1,3 @@
+graphviz
+jupyter
+nltk
