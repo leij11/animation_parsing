@@ -53,42 +53,29 @@ def _get_trigger(model, fsm, trigger_name, *args, **kwargs):
     return event.trigger(model, *args, **kwargs)
 
 
-def _prep_ordered_arg(desired_length, arguments=None):
-    """Ensure list of arguments passed to add_ordered_transitions has the proper length.
-    """
-    arguments = to_list(arguments) if arguments is not None else [None]
-    if len(arguments) != desired_length and len(arguments) != 1:
-        raise ValueError("Argument length must be either 1 or the same length as "
-                         "the number of transitions.")
-    if len(arguments) == 1:
-        return arguments * desired_length
-    return arguments
 
 class Fsm(object):
-
-    separator = '_'  # separates callback type from state/transition name
-    wildcard_all = '*'  # will be expanded to ALL states
-    wildcard_same = '='  # will be expanded to source state
+    """
+    Finite State Machine class is the central class
+    that controls states, transitions and models
+    """
+    separator = '_'  
+    wildcard_all = '*'  
+    wildcard_same = '='  
     state_cls = State
     transition_cls = Transition
     event_cls = Action
 
     def __init__(self, model='self', states=None, initial='initial', transitions=None,
                  send_event=False, auto_transitions=True,
-                 ordered_transitions=False, ignore_invalid_triggers=None,
-                 before_state_change=None, after_state_change=None, name=None,
-                 queued=False, prepare_event=None, finalize_event=None, model_attribute='state', **kwargs):
+                  ignore_invalid_triggers=None, finalize_event=None, model_attribute='state', **kwargs):
         try:
             super(Fsm, self).__init__(**kwargs)
         except TypeError as err:
             raise ValueError('Passing arguments {0} caused an inheritance error: {1}'.format(kwargs.keys(), err))
 
         # initialize protected attributes first
-        self._queued = queued
         self._transition_queue = deque()
-        self._before_state_change = []
-        self._after_state_change = []
-        self._prepare_event = []
         self._finalize_event = []
         self._initial = None
 
@@ -97,11 +84,8 @@ class Fsm(object):
         self.send_event = send_event
         self.auto_transitions = auto_transitions
         self.ignore_invalid_triggers = ignore_invalid_triggers
-        self.prepare_event = prepare_event
-        self.before_state_change = before_state_change
-        self.after_state_change = after_state_change
+
         self.finalize_event = finalize_event
-        self.name = name + ": " if name is not None else ""
         self.model_attribute = model_attribute
 
         self.models = []
@@ -115,8 +99,7 @@ class Fsm(object):
         if transitions is not None:
             self.add_transitions(transitions)
 
-        if ordered_transitions:
-            self.add_ordered_transitions()
+
 
         if model:
             self.add_model(model)
@@ -218,7 +201,7 @@ class Fsm(object):
         """ Alias for add_states. """
         self.add_states(*args, **kwargs)
 
-    def add_states(self, states, on_enter=None, on_exit=None,
+    def add_states(self, states,
                    ignore_invalid_triggers=None, **kwargs):
         ignore = ignore_invalid_triggers
         if ignore is None:
@@ -229,7 +212,7 @@ class Fsm(object):
         for state in states:
             if isinstance(state, (string_types, Enum)):
                 state = self._create_state(
-                    state, on_enter=on_enter, on_exit=on_exit,
+                    state, 
                     ignore_invalid_triggers=ignore, **kwargs)
             elif isinstance(state, dict):
                 if 'ignore_invalid_triggers' not in state:
@@ -293,41 +276,7 @@ class Fsm(object):
             else:
                 self.add_transition(**trans)
 
-    def add_ordered_transitions(self, states=None, trigger='next_state',
-                                loop=True, loop_includes_initial=True,
-                                 **kwargs):
 
-        if states is None:
-            states = list(self.states.keys())  # need to listify for Python3
-        len_transitions = len(states)
-        if len_transitions < 2:
-            raise ValueError("Can't create ordered transitions on a Machine "
-                             "with fewer than 2 states.")
-        if not loop:
-            len_transitions -= 1
-        # ensure all args are the proper length
-      #  conditions = _prep_ordered_arg(len_transitions, conditions)
-       # unless = _prep_ordered_arg(len_transitions, unless)
-       # before = _prep_ordered_arg(len_transitions, before)
-       # after = _prep_ordered_arg(len_transitions, after)
-       # prepare = _prep_ordered_arg(len_transitions, prepare)
-        # reorder list so that the initial state is actually the first one
-        idx = states.index(self._initial)
-        states = states[idx:] + states[:idx]
-
-        for i in range(0, len(states) - 1):
-            self.add_transition(trigger, states[i], states[i + 1],
-                             #   conditions=conditions[i],
-                              #  unless=unless[i],
-                               # before=before[i],
-                                #after=after[i],
-                                #prepare=prepare[i],
-                                **kwargs)
-        if loop:
-            self.add_transition(trigger, states[-1],
-                                # omit initial if not loop_includes_initial
-                                states[0 if loop_includes_initial else 1],
-                                **kwargs)
 
     def get_transitions(self, trigger="", source="*", dest="*"):
         if trigger:
@@ -373,6 +322,11 @@ class Fsm(object):
                 self._transition_queue.clear()
                 raise
         return True
+
+
+
+
+ 
 
 
  
