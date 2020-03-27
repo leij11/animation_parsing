@@ -2,14 +2,16 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri Mar 20 14:38:48 2020
-
 @author: leij11
 """
 from collections import OrderedDict, defaultdict, deque
 from functools import partial
 from state import State
 class Action(object):
-
+    """
+    A class that manages of transitions
+    that set assigned to the same trigger
+    """
     def __init__(self, name, fsm):
         self.name = name
         self.fsm = fsm
@@ -47,9 +49,6 @@ class Action(object):
         except Exception as err:
             event_data.error = err
             raise
-        finally:
-            for func in self.fsm.finalize_event:
-                self.fsm.callback(func, event_data)
         return event_data.result
 
     def __repr__(self):
