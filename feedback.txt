@@ -1,0 +1,17 @@
+Project Proposal: 1/3
+
+A project proposal does not need to contain implementations, but needs to
+discuss what is being animated in order to show what. The project proposal
+should contain some illustrations instead. It should also discuss different
+ways of implementations. It is unlikely that turtles are the best way. Overall
+this is by far not ambitious enough to receive a passing grade. This topic
+has already been taken by two other groups, so you need to modify it to give
+it some distinction.
+
+Project Artifacts:
+
+Nice idea to use graphviz. Some comments about the poster: write "Problem *and*
+Motivation", but use "&" or "and" consistently in headers. Space missing before
+"Our project". Section "Documentation" doesn't say much, can be left out. The
+second item under "Conclusion" doesn't say much, be specific or leave out. Since
+you used graphviz, you may want to acknowledge that in the references.
